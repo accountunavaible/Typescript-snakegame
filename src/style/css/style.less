@@ -1,0 +1,58 @@
+@bg-color: #b7d4a8;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier";
+}
+
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  #stage {
+    width: 304px;
+    height: 304px;
+    border: 2px solid black;
+    position: relative;
+    // 设置蛇的样式
+    #snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border: 1px solid @bg-color;
+        //绝对定位要移动位置
+        position: absolute;
+      }
+    }
+
+    #food {
+      //绝对定位要移动位置
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      position: absolute;
+      left: 40px;
+      top: 100px;
+      border-radius: 50%;
+    }
+  }
+
+  #score-panel {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
